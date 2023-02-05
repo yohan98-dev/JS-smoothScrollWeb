@@ -29,8 +29,26 @@ else{
 });
 
 
-
+const navBar = document.getElementById('nav');
+const topLink = document.querySelector('.top-link');
 // ********** fixed navbar ************
+window,addEventListener('scroll', function(){
+    const scrollHight = window.pageYOffset;
+    const navHeight = navBar.getBoundingClientRect().height;
 
+    if(scrollHight > navHeight){
+        navBar.classList.add('fixed-nav');
+    }
+    else{
+        navBar.classList.remove('fixed-nav');
+    }
+
+    if (scrollHight > 500){
+        topLink.classList.add('show-link');
+    }
+    else{
+        topLink.classList.remove('show-link');
+    }
+})
 // ********** smooth scroll ************
 // select links
